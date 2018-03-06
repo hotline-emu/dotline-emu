@@ -40,62 +40,6 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -104,6 +48,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# This is a modified version of boweevil's, .bashrc. I already used this file in my own.
+source $HOME/.aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -124,7 +71,7 @@ PATH=:./vendor/bin:$PATH
 
 # Add git branch if its present to PS1
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e ' /^[^*]/d' -e 's/*\(.*\)/ [\1 ]/'
+	git branch 2> /dev/null | sed -e ' /^[^*]/d' -e 's/*\(.*\)/ [\1 ] /'
 }
 
 # Dot unicode character
@@ -132,6 +79,7 @@ dot() {
     echo -e '\u26ab'
 }
 
+# Arrow unicode character, and some swappables.
 arrow() {
     # echo -e '\u21e2' # dot dot arrow
     echo -e '\u2325 ' # Branch notation
@@ -139,20 +87,20 @@ arrow() {
     # echo -e '\u30e0' # Katakana hotness
 }
 
-PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;91m\]$(dot)\[\033[0;35m\]$(dot)\[\033[0;94m\]$(dot)\[\033[0;96m\]$(dot)\[\033[0;00m\]\[\033[1;32m\][ \w ]\[\033[0;36m\]$(parse_git_branch) \[\033[1;31m\]$(arrow) \[\033[0;33m\]'
+# An overly complicated (but dope) terminal display.
+PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;91m\]$(dot)\[\033[0;35m\]$(dot)\[\033[0;94m\]$(dot)\[\033[0;96m\]$(dot)\[\033[0;00m\]\[\033[1;32m\][ \w ]\[\033[0;36m\]$(parse_git_branch)\[\033[1;31m\]$(arrow) \[\033[0;33m\]'
 export PS1
 
+# You rarely see this, but its what you see if you extend your command to a new line.
 PS2='\[\033[0;91m\]$(dot)'
 export PS2
 
-# NPM env vars
+# NPM environmental configurations.
 NPM_PACKAGES="/home/hotline-emu/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Composer env vars
+# Composer environmental configurations.
 COMPOSER_PACKAGES="/home/hotline-emu/.composer/vendor"
 PATH="$COMPOSER_PACKAGES/bin:$PATH"
-
-source $HOME/.aliases

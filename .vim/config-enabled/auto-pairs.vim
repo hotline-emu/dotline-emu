@@ -1,1 +1,0 @@
-../config-available/auto-pairs.vim

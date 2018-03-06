@@ -93,3 +93,14 @@ let mapleader = "\\"
 nnoremap <leader>q <esc>:q!<cr> " Ninja quit
 nnoremap <leader>w <esc>:wq<cr> " Ninja write
 
+" Remove multiple blank lines from configured file types
+autocmd BufWritePre *.php :%s/\n\{3,}/\r\r/e
+autocmd BufWritePre *.conf :%s/\n\{3,}/\r\r/e
+autocmd BufWritePre *.ini :%s/\n\{3,}/\r\r/e
+
+" Trim trailing whitespace from configured file types
+autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd BufWritePre *.conf :%s/\s\+$//e
+autocmd BufWritePre *.ini :%s/\s\+$//e
+
+set pastetoggle=<F2>

@@ -1,1 +1,11 @@
+# Recklessly travel without caring about case sensitivity
 set completion-ignore-case On
+
+# Intelligently autocomplete.
+set skip-completed-text On
+
+# If I have to double tab to list, go ahead and show me earlier.
+set show-all-if-ambiguous On
+
+# Because of the above, if too many results come up, ask.
+set completion-query-items 50

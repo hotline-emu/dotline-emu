@@ -9,3 +9,21 @@ alias .....="cd ../../../.."
 
 # Shortcut to edit /etc/hosts.
 alias hosts='sudo vim /etc/hosts'
+
+# Pretty greps
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Easier directory listings
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Quicker git aliases, but not using the aliass in .gitconfig
+alias gst='git status'
+alias gb='git branch'
+alias gbd='git branch -D'
+alias gc='git checkout'
+alias gl='git log'

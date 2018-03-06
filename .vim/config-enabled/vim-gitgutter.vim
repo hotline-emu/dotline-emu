@@ -1,1 +1,0 @@
-../config-available/vim-gitgutter.vim

@@ -1,8 +1,29 @@
 {
-    "editor.mouseWheelZoom": true,
-    "editor.fontFamily": "League Mono",
+    // Font stuff
+    "editor.fontFamily": "Hasklig Semibold",
+    "editor.fontLigatures": true,
     "editor.fontSize": 12,
-    "workbench.colorTheme": "Banner (rainglow)",
-    "workbench.startupEditor": "newUntitledFile",
-    "editor.minimap.enabled": false
+    // Zoom on ctrl + wheel
+    "editor.mouseWheelZoom": true,
+    // Theme
+    "workbench.colorTheme": "Peacocks In Space Contrast (rainglow)",
+    // Start empty
+    "workbench.startupEditor": "none",
+    // Minimap
+    "editor.minimap.enabled": false,
+    // Wordwrap at 140 (Coding standard max)
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 141,
+    // Ruler at PSR2 boundary, and CS boundary
+    "editor.rulers": [
+        120,
+        140
+    ],
+    // Indent wraps to stand out
+    "editor.wrappingIndent": "indent",
+    "phpcs.standard": "PSR2",
+    "editor.tabSize": 4,
+    "[yaml]": {
+        "editor.tabSize": 4,
+      }
 }
