@@ -1,0 +1,31 @@
+[user]
+	name = James Galecki
+	email = james.galecki@traderinteractive.com
+[core]
+	excludesfile = /home/hotline-emu/.gitignore_global
+	editor = vim
+[alias]
+	st = status
+	rh = reset --hard
+	rs = reset --soft HEAD~1
+	bd = branch -D
+	b = branch
+	rv = remote -v
+	ds = diff --stat --color
+	d = diff --color --color-words
+	fa = fetch --all
+	c = checkout
+	rev = rebase -v
+	cm = commit -m
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan

@@ -1,0 +1,11 @@
+# Well... you know.
+alias cd..="cd .."
+
+# Quicker navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcut to edit /etc/hosts.
+alias hosts='sudo vim /etc/hosts'

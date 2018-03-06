@@ -1,0 +1,8 @@
+{
+    "editor.mouseWheelZoom": true,
+    "editor.fontFamily": "League Mono",
+    "editor.fontSize": 12,
+    "workbench.colorTheme": "Banner (rainglow)",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false
+}

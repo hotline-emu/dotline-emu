@@ -1,0 +1,1 @@
+../config-available/tabular.vim

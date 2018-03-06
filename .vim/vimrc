@@ -1,0 +1,222 @@
+"=============================================================================
+" GENERAL
+"=============================================================================
+" Don't act like Vi.
+setlocal nocompatible
+
+"=============================================================================
+" Basic Configuration
+"=============================================================================
+syntax on
+
+" UI -------------------------------------------------------------------------
+set ruler
+set showcmd
+
+" Tell vim where to place splits.
+set splitbelow
+set splitright
+
+" Formatting -----------------------------------------------------------------
+" Tabs
+set autoindent
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+" Line Breaks
+set linebreak
+
+" Searching ------------------------------------------------------------------
+set incsearch
+set hlsearch
+
+" Fixes ----------------------------------------------------------------------
+" Fix backspace behavior.
+set backspace=indent,eol,start
+
+" Buffers --------------------------------------------------------------------
+" Don't close buffers which are not visible.
+set hidden
+
+" Help Settings --------------------------------------------------------------
+" Open :help in tab instead of split.
+cnoreabbrev <expr> help getcmdtype() == ":" && getcmdline() == 'help' ? 'tab help' : 'help'
+
+" GUI Settings ---------------------------------------------------------------
+if has('gui_running')
+  set lines=34 columns=120
+  set guifont=Terminus\ 12
+
+  " Expand the syntax menu automatically.
+  let do_syntax_sel_menu = 1
+  runtime! synmenu.vim
+
+  " Simplify the GUI.
+  set guioptions-=T    "Hide the Toolbar
+  set guioptions-=r    "Hide the right-hand scroll bar
+  set guioptions-=L    "Hide the left-hand scroll bar
+endif
+
+" Key Bindings ---------------------------------------------------------------
+" Toggle Spell Check with \s.
+nnoremap <leader>s :set spell!<cr>
+
+" Move line up or down using Alt + j or k respectively.
+nnoremap <c-s-j> :m .+1<CR>==
+nnoremap <c-s-k> :m .-2<CR>==
+inoremap <c-s-j> <Esc>:m .+1<CR>==gi
+inoremap <c-s-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-s-j> :m '>+1<CR>gv=gv
+vnoremap <c-s-k> :m '<-2<CR>gv=gv
+
+" Commenting blocks of code. -------------------------------------------------
+autocmd FileType c,cpp,java,scala let b:comment_leader = '//'
+autocmd FileType sh,ruby,python   let b:comment_leader = '#'
+autocmd FileType conf,fstab       let b:comment_leader = '#'
+autocmd FileType tex              let b:comment_leader = '%'
+autocmd FileType mail             let b:comment_leader = '>'
+autocmd FileType vim              let b:comment_leader = '"'
+noremap <leader>cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <leader>cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Set Visible Right Margin ---------------------------------------------------
+function! ColorColumnEighty()
+  " Set the margin to 80.  This colors column 81.
+  set colorcolumn=81
+  highlight ColorColumn ctermbg=1 guibg=Red
+endfunction
+
+function! ColorColumnOneTwenty()
+  " Set the margin to 120.  This colors column 121.
+  set colorcolumn=121
+  highlight ColorColumn ctermbg=1 guibg=Red
+endfunction
+
+function! ToggleColorColumn()
+  " Cycle through column 80, 120, and disabled.
+  if &colorcolumn == 0
+    call ColorColumnEighty()
+  elseif &colorcolumn == '81'
+    call ColorColumnOneTwenty()
+  elseif &colorcolumn == '121'
+    set colorcolumn=0
+  endif
+endfunction
+
+nmap <F9> :call ToggleColorColumn()<cr>
+
+" Highlight current line and column ------------------------------------------
+"set cursorline
+"set cursorcolumn
+
+function! ToggleCursorRowCol()
+  if &cursorline == 0 && &cursorcolumn == 0
+    set cursorline
+    set cursorcolumn
+  elseif &cursorline == 1 && &cursorcolumn == 1
+    set nocursorcolumn
+  elseif &cursorline == 1 && &cursorcolumn == 0
+    set nocursorline
+  endif
+endfunction
+
+nmap <F8> :call ToggleCursorRowCol()<cr>
+
+" fill rest of line with characters ------------------------------------------
+function! FillLine( str )
+  " Set tw to the desired total length
+  let tw = &textwidth
+  if tw==0 | let tw = 79 | endif
+  " Strip trailing spaces first
+  .s/[[:space:]]*$//
+  " Calculate total number of 'str's to insert
+  let reps = (tw - col("$")) / len(a:str)
+  " Insert them, if there's room, removing trailing spaces (though forcing
+  " there to be one)
+  if reps > 0
+    .s/$/\=(' '.repeat(a:str, reps))/
+  endif
+endfunction
+
+nmap <leader>= :call FillLine( '=' )<cr>
+nmap <leader>- :call FillLine( '-' )<cr>
+nmap <leader># :call FillLine( '#' )<cr>
+
+" Fuzzy File Finder ----------------------------------------------------------
+" Search for files recursively from working directory when using :find.
+set path+=**
+
+" Wildmode
+" Display a nice menu when completing file names.
+set wildmode=longest:full,full
+set wildignorecase
+set wildmenu
+
+" Line Numbers ---------------------------------------------------------------
+set number
+
+if v:version > 703
+  " Display line numbers relative to the cursor position.
+  set relativenumber
+
+  function! ToggleLineNumbers()
+    if &number == 0 && &relativenumber == 0
+      set number
+      set relativenumber
+    elseif &number == 1 && &relativenumber == 1
+      set norelativenumber
+    elseif &number == 1 && &relativenumber == 0
+      set nonumber
+    endif
+  endfunction
+
+  " Toggle relative numbers.
+  nnoremap <F7> :call ToggleLineNumbers()<cr>
+else
+
+endif
+
+" List Characters ------------------------------------------------------------
+"set list
+set listchars=tab:│\ ,trail:·,precedes:«,extends:»,eol:¶
+
+nmap <F10> :set list!<cr>
+
+" Trailing White Space -------------------------------------------------------
+" Show trailing white space.
+match ErrorMsg '\s\+$'
+
+" Remove trailing white space.
+nnoremap <silent> <leader>rtw :%s/\s\+$//e<cr>
+
+
+"=============================================================================
+" VUNDLE
+"=============================================================================
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/.vim/Vundle.vim')
+
+" Let Vundle manage Vundle.  This is required.
+Plugin 'VundleVim/Vundle.vim'
+
+"=============================================================================
+" COLORS
+"=============================================================================
+" Vim-airline will be loaded as part of the colorscheme.  This must come after
+" Vundle is loaded.
+execute 'source' '~/.vim/colorscheme/gruvbox.vim'
+
+"=============================================================================
+" CONFIGURATION FILES
+"=============================================================================
+for f in split(glob('~/.vim/config-enabled/*.vim'), '\n')
+  execute 'source' f
+endfor
+
+call vundle#end()
+filetype plugin indent on

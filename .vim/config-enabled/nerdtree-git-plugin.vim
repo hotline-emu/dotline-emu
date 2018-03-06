@@ -1,0 +1,1 @@
+../config-available/nerdtree-git-plugin.vim
