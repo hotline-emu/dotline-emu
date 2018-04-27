@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
-      *) return;;
+    *) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -56,11 +56,11 @@ source $HOME/.aliases
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
 # I keep a bin folder for global scripts.
@@ -71,12 +71,32 @@ PATH=:./vendor/bin:$PATH
 
 # Add git branch if its present to PS1
 parse_git_branch() {
-	git branch 2> /dev/null | sed -e ' /^[^*]/d' -e 's/*\(.*\)/ [\1 ] /'
+    git branch 2> /dev/null | sed -e ' /^[^*]/d' -e 's/*\(.*\)/ [\1 ]/'
 }
 
 # Dot unicode character
 dot() {
-    echo -e '\u26ab'
+    # echo -e '\u26ab'
+    echo -e '\u2660'
+    echo -e '\u2663'
+    echo -e '\u2665'
+    echo -e '\u2666'
+}
+
+spade() {
+    echo -e '\u2660 '
+}
+
+club() {
+    echo -e '\u2663 '
+}
+
+heart() {
+    echo -e '\u2665 '
+}
+
+diamond() {
+    echo -e '\u2666 '
 }
 
 # Arrow unicode character, and some swappables.
@@ -88,7 +108,7 @@ arrow() {
 }
 
 # An overly complicated (but dope) terminal display.
-PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;91m\]$(dot)\[\033[0;35m\]$(dot)\[\033[0;94m\]$(dot)\[\033[0;96m\]$(dot)\[\033[0;00m\]\[\033[1;32m\][ \w ]\[\033[0;36m\]$(parse_git_branch)\[\033[1;31m\]$(arrow) \[\033[0;33m\]'
+PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;91m\]$(spade)\[\033[0;35m\]$(club)\[\033[0;94m\]$(heart)\[\033[0;96m\]$(diamond)\[\033[0;00m\]\[\033[1;32m\][ \w ]\[\033[0;36m\]$(parse_git_branch)\[\033[1;31m\] $(arrow) \[\033[0;33m\]'
 export PS1
 
 # You rarely see this, but its what you see if you extend your command to a new line.
