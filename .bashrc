@@ -74,15 +74,6 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e ' /^[^*]/d' -e 's/*\(.*\)/ [\1 ]/'
 }
 
-# Dot unicode character
-dot() {
-    # echo -e '\u26ab'
-    echo -e '\u2660'
-    echo -e '\u2663'
-    echo -e '\u2665'
-    echo -e '\u2666'
-}
-
 spade() {
     echo -e '\u2660 '
 }
@@ -112,7 +103,7 @@ PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[0;91m\]$(spade
 export PS1
 
 # You rarely see this, but its what you see if you extend your command to a new line.
-PS2='\[\033[0;91m\]$(dot)'
+PS2='\[\033[0;91m\]$(spade)'
 export PS2
 
 # NPM environmental configurations.
