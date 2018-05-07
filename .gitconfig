@@ -1,6 +1,6 @@
 [user]
 	name = hotline-emu
-	email = redacted
+	email = james.galecki@traderinteractive.com
 [core]
 	excludesfile = /home/hotline-emu/.gitignore_global
 	editor = vim

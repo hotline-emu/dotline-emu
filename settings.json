@@ -1,6 +1,6 @@
 {
     // Font stuff
-    "editor.fontFamily": "Hasklig Semibold",
+    "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
     "editor.fontSize": 12,
     // Zoom on ctrl + wheel
