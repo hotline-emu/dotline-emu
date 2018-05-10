@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
   export ZSH=/home/hotline-emu/.oh-my-zsh
 
@@ -23,22 +20,19 @@ POWERLEVEL9K_PUBLIC_IP_FOREGROUND='242'
 POWERLEVEL9K_USER_DEFAULT_FOREGROUND='238'
 POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='255'
 
+# Eye candy prefixes
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{027}\u2660 %F{033}\u2665 %F{039}\u2666 %F{051}\u2663 %F{087}\u2911 %F{white}"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{027}\u2660 %F{033}\u2666 %F{039}\u2663 %F{051}\u2665 %F{087}\u2911 %F{014}"
 
+# Elements for the powerline
+POWERLEVEL9K_BATTERY_VERBOSE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(battery user public_ip vcs)
 POWERLEVEL9K_DISABLE_RPROMPT=true
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# The only appropriate timestamp format
 HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -52,7 +46,14 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
 # Manually set language environment
 export LANG=en_US.UTF-8
+
+# Personal configs
+source $HOME/.aliases
+source $HOME/.inputrc
+source $HOME/.npmrc
+source $HOME/.profile
+
+# For lazy runs of phpunit, etc.
+export PATH=:./vendor/bin:$PATH
