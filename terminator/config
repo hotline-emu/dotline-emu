@@ -1,8 +1,10 @@
 [global_config]
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
-  title_font = Fira Code weight=450 8
+  title_font = "Input Mono Condensed, Condensed 8"
   title_hide_sizetext = True
+  title_receive_bg_color = "#2bd8ea"
+  title_transmit_bg_color = "#1789d3"
   title_use_system_font = False
 [keybindings]
 [layouts]
@@ -15,17 +17,37 @@
       type = Window
 [plugins]
 [profiles]
-  [[default]]
-    background_color = "#222222"
+  [[default]] # Toychest
+    background_color = "#24364b"
+    background_darkness = 0.9
+    background_type = transparent
+    cursor_color = "#d5d5d5"
+    custom_command = tmux
+    font = Input Mono 10
+    foreground_color = "#31d07b"
+    palette = "#2c3f58:#be2d26:#1a9172:#db8e27:#325d96:#8a5edc:#35a08f:#23d183:#336889:#dd5944:#31d07b:#e7d84b:#34a6da:#ae6bdc:#42c3ae:#d5d5d5"
+    scrollback_lines = 1000
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False
+  [[de-fault]]
+    background_color = "#282828"
     background_darkness = 0.9
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Fira Code Medium 10
-    foreground_color = "#bdbaae"
-    palette = "#15171c:#ec5f67:#81a764:#fec254:#5486c0:#bf83c1:#57c2c1:#efece7:#555555:#ff6973:#93d493:#ffd256:#4d84d1:#ff55ff:#83e9e4:#ffffff"
+    custom_command = tmux
+    font = Input Mono 10
+    foreground_color = "#ebdbb2"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     scrollback_lines = 1000
     scrollbar_position = hidden
+    use_custom_command = True
     use_system_font = False
+  [[Aci]]
+    background_color = "#0d1926"
+    cursor_color = "#c4e9ff"
+    foreground_color = "#b4e1fd"
+    palette = "#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6:#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6"
   [[Banner Modded]]
     background_color = "#1b1d1e"
     background_darkness = 0.9
@@ -37,3 +59,13 @@
     scrollback_lines = 1000
     scrollbar_position = hidden
     use_system_font = False
+  [[Bim]]
+    background_color = "#012849"
+    cursor_color = "#c4d0de"
+    foreground_color = "#a9bed8"
+    palette = "#2c2423:#f557a0:#a9ee55:#f5a255:#5ea2ec:#a957ec:#5eeea0:#918988:#918988:#f579b2:#bbee78:#f5b378:#81b3ec:#bb79ec:#81eeb2:#f5eeec"
+  [[Flat]]
+    background_color = "#002240"
+    cursor_color = "#e5be0c"
+    foreground_color = "#2cc55d"
+    palette = "#222d3f:#a82320:#32a548:#e58d11:#3167ac:#781aa0:#2c9370:#b0b6ba:#212c3c:#d4312e:#2d9440:#e5be0c:#3c7dd2:#8230a7:#35b387:#e7eced"

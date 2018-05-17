@@ -48,6 +48,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 # PHPUnit plugin
 source $HOME/projects/external/phpunit.plugin.zsh/phpunit.plugin.zsh
+source $HOME/projects/external/phpcs.plugin.zsh/phpcs.plugin.zsh
 
 # Manually set language environment
 export LANG=en_US.UTF-8
