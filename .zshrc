@@ -42,7 +42,9 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   git,
   tmux,
-  composer
+  composer,
+  docker,
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
