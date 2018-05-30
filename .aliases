@@ -27,3 +27,10 @@ alias gb='git branch'
 alias gbd='git branch -D'
 alias gc='git checkout'
 alias gl='git log'
+
+alias sc-start='systemctl start'
+alias sc-stop='systemctl stop'
+alias sc-restart='systemctl restart'
+alias sc-status='systemctl status'
+
+alias refresh-aptitude='sudo apt update && sudo apt upgrade -y'
