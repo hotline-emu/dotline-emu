@@ -1,14 +1,11 @@
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/hotline-emu/.oh-my-zsh
+export TERM="xterm-256color"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="agnoster" # Has nice powerline.
+# Path to your oh-my-zsh installation.
+export ZSH="/home/hotline-emu/.oh-my-zsh"
 
 # Powerlevel 9K Config
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
 # Left prompt backgrounds
 POWERLEVEL9K_PUBLIC_IP_BACKGROUND='087'
@@ -22,44 +19,57 @@ POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='255'
 
 # Eye candy prefixes
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{027}\u2660 %F{033}\u2666 %F{039}\u2663 %F{051}\u2665 %F{087}\u2911 %F{014}"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\u2911  "
 
 # Elements for the powerline
 POWERLEVEL9K_BATTERY_VERBOSE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(battery user public_ip vcs)
-POWERLEVEL9K_DISABLE_RPROMPT=true
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time dir)
 POWERLEVEL9K_MODE='nerdfont-complete'
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-# The only appropriate timestamp format
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to change the command execution time
 HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git,
-  tmux,
   composer,
   docker,
   docker-compose
 )
 
+# Bring in the aliases and configs
 source $ZSH/oh-my-zsh.sh
-# PHPUnit plugin
+source ~/.aliases
+source ~/.inputrc
+source ~/.npmrc
+source ~/.profile
+
+# Path manipulations
+PATH=:./vendor/bin:$PATH
+PATH=$HOME/bin:$PATH
+
+# NPM Tomfoolery
+NPM_PACKAGES="~/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
+unset MANPATH
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# Composer Tomfoolery
+COMPOSER_PACKAGES="~/.composer/vendor"
+PATH="$COMPOSER_PACKAGES/bin:$PATH"
+
+# These manual plugins too
 source $HOME/projects/external/phpunit.plugin.zsh/phpunit.plugin.zsh
 source $HOME/projects/external/phpcs.plugin.zsh/phpcs.plugin.zsh
 
-# Manually set language environment
-export LANG=en_US.UTF-8
-
-# Personal configs
-source $HOME/.aliases
-source $HOME/.inputrc
-source $HOME/.npmrc
-source $HOME/.profile
-
-# For lazy runs of phpunit, etc.
-export PATH=:./vendor/bin:$PATH
+# neofetch
