@@ -7,26 +7,18 @@ export ZSH="/home/hotline-emu/.oh-my-zsh"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 
-# Left prompt backgrounds
-POWERLEVEL9K_PUBLIC_IP_BACKGROUND='087'
-POWERLEVEL9K_USER_DEFAULT_BACKGROUND='045'
-POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='033'
-
-# Left prompt foregrounds
-POWERLEVEL9K_PUBLIC_IP_FOREGROUND='242'
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND='238'
-POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='255'
-
 # Eye candy prefixes
+POWERLEVEL9K_COLOR_SCHEME='dark'
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\u2911  "
 
 # Elements for the powerline
-POWERLEVEL9K_BATTERY_VERBOSE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(battery user public_ip vcs)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d.%m.%y}"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time dir)
+POWERLEVEL9K_USER_DEFAULT_BACKGROUND="blue"
+POWERLEVEL9K_HOST_LOCAL_BACKGROUND="cyan"
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %m.%d.%Y}"
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -41,7 +33,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(
-  git,
   composer,
   docker,
   docker-compose
@@ -59,10 +50,7 @@ PATH=:./vendor/bin:$PATH
 PATH=$HOME/bin:$PATH
 
 # NPM Tomfoolery
-NPM_PACKAGES="~/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
-unset MANPATH
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+PATH=$HOME/.npm-packages/bin:$PATH
 
 # Composer Tomfoolery
 COMPOSER_PACKAGES="~/.composer/vendor"
@@ -71,5 +59,7 @@ PATH="$COMPOSER_PACKAGES/bin:$PATH"
 # These manual plugins too
 source $HOME/projects/external/phpunit.plugin.zsh/phpunit.plugin.zsh
 source $HOME/projects/external/phpcs.plugin.zsh/phpcs.plugin.zsh
+
+zstyle ':completion:*' ignored-patterns '*HEAD*'
 
 # neofetch
