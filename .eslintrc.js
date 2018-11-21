@@ -75,7 +75,7 @@ module.exports = {
         'deprecate/import': 2,
         'sonarjs/no-duplicate-string': 0,
         'immutable/no-let': 2,
-    	'immutable/no-this': 2,
-    	'immutable/no-mutation': 2
+    	'immutable/no-this': 0,
+    	'immutable/no-mutation': 0
     }
 };
