@@ -5,10 +5,19 @@ module.exports = {
         'jquery': true,
         'jest': true,
     },
+    'plugins': [
+        'jsdoc',
+        'jest',
+        'deprecate',
+        'sonarjs',
+        'immutable',
+        'promise'
+    ],
     'extends': [
         'airbnb',
         'plugin:jest/recommended',
-        'plugin:sonarjs/recommended'
+        'plugin:sonarjs/recommended',
+        'plugin:promise/recommended'
     ],
     'parserOptions': {
         'sourceType': 'module',
@@ -46,30 +55,27 @@ module.exports = {
             'requireParamDescription': false,
             'requireReturnDescription': false,
         }],
-        "jsdoc/check-param-names": 1,
-        "jsdoc/check-tag-names": 1,
-        "jsdoc/check-types": 1,
-        "jsdoc/newline-after-description": 1,
-        "jsdoc/no-undefined-types": 1,
-        "jsdoc/require-description": 0,
-        "jsdoc/require-description-complete-sentence": 1,
-        "jsdoc/require-example": 0,
-        "jsdoc/require-hyphen-before-param-description": 1,
-        "jsdoc/require-param": 1,
-        "jsdoc/require-param-description": 1,
-        "jsdoc/require-param-name": 1,
-        "jsdoc/require-param-type": 1,
-        "jsdoc/require-returns-description": 0,
-        "jsdoc/require-returns-type": 1,
-        "jsdoc/valid-types": 1,
-        "deprecate/function": 2,
-        "deprecate/import": 2,
-        "sonarjs/no-duplicate-string": 0
-    },
-    "plugins": [
-        "jsdoc",
-        "jest",
-        "deprecate",
-        "sonarjs"
-    ]
+        'jsdoc/check-param-names': 1,
+        'jsdoc/check-tag-names': 1,
+        'jsdoc/check-types': 1,
+        'jsdoc/newline-after-description': 1,
+        'jsdoc/no-undefined-types': 1,
+        'jsdoc/require-description': 0,
+        'jsdoc/require-description-complete-sentence': 1,
+        'jsdoc/require-example': 0,
+        'jsdoc/require-hyphen-before-param-description': 1,
+        'jsdoc/require-param': 1,
+        'jsdoc/require-param-description': 1,
+        'jsdoc/require-param-name': 1,
+        'jsdoc/require-param-type': 1,
+        'jsdoc/require-returns-description': 0,
+        'jsdoc/require-returns-type': 1,
+        'jsdoc/valid-types': 1,
+        'deprecate/function': 2,
+        'deprecate/import': 2,
+        'sonarjs/no-duplicate-string': 0,
+        'immutable/no-let': 2,
+    	'immutable/no-this': 2,
+    	'immutable/no-mutation': 2
+    }
 };
