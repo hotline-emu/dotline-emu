@@ -9,6 +9,8 @@ plugins=(
   git
 )
 
+zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.inputrc
