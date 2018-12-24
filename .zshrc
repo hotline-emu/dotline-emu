@@ -6,7 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-  git
+    git
 )
 
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
@@ -18,6 +18,6 @@ export PATH=$HOME/bin:$PATH
 export PATH=./vendor/bin:$PATH
 fpath=($fpath "/home/hotline-emu/.zfunctions")
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
