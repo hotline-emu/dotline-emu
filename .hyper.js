@@ -42,11 +42,11 @@ module.exports = {
     bell: 'SOUND',
     copyOnSelect: false,
     defaultSSHApp: true,
-    hyperStatusLine: {
-      dirtyColor: 'salmon',
-    },
   },
-  plugins: ["hyperlinks", "hyper-statusline", "hyperterm-monokai", "gitrocket"],
+  plugins: [
+    "hyper-statusline", 
+    "hyperterm-monokai"
+  ],
   localPlugins: [
     // "hyperline",
   ],

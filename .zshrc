@@ -16,3 +16,8 @@ source $HOME/.aliases
 source $HOME/.inputrc
 export PATH=$HOME/bin:$PATH
 export PATH=./vendor/bin:$PATH
+fpath=($fpath "/home/hotline-emu/.zfunctions")
+
+  # Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship

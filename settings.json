@@ -37,11 +37,15 @@
     "path-intellisense.showHiddenFiles": true,
     "php.executablePath": "/usr/bin/php",
     "php.suggest.basic": true,
+    "phpcs.enable": true,
     "phpcs.standard": "PSR2",
+    "phpcs.autoConfigSearch": true,
     "window.restoreWindows": "none",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Overflow (rainglow)",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.settings.editor": "json",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "php-docblocker.returnGap": true,
+    "php-docblocker.gap": true,
 }

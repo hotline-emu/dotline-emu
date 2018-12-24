@@ -18,6 +18,7 @@
 	cm = commit -m
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	review = !sh -c 'git fetch $1 pull/$2/head:$3 && git checkout $3' -
+	deploy-arch = !sh -c 'git fetch $1 pull/$2/head:$2 && git push $1 $2:architecture-dev -f && git branch -D $2' -
 [color]
 	ui = true
 [pager]
