@@ -8,7 +8,6 @@ module.exports = {
     'plugins': [
         'jsdoc',
         'jest',
-        'deprecate',
         'sonarjs',
         'promise'
     ],
@@ -18,9 +17,6 @@ module.exports = {
         'plugin:sonarjs/recommended',
         'plugin:promise/recommended'
     ],
-    'parserOptions': {
-        'sourceType': 'module',
-    },
     'rules': {
         'indent': ['error', 4],
         'max-len': ['error', {
@@ -64,13 +60,13 @@ module.exports = {
         'jsdoc/require-param-type': 1,
         'jsdoc/require-returns-type': 1,
         'jsdoc/valid-types': 1,
-        'deprecate/function': 2,
-        'deprecate/import': 2,
         'jsdoc/check-tag-names': 0,
         'jsdoc/require-description': 0,
         'jsdoc/require-example': 0,
         'jsdoc/require-param-description': 0,
         'jsdoc/require-returns-description': 0,
-        'sonarjs/no-duplicate-string': 0
+        'sonarjs/no-duplicate-string': 0,
+        'import/no-extraneous-dependencies': 0,
+        'no-console': 0
     }
 };
