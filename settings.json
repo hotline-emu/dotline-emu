@@ -41,7 +41,7 @@
     "phpcs.autoConfigSearch": true,
     "window.restoreWindows": "none",
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Overflow (rainglow)",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.settings.editor": "json",
     "workbench.startupEditor": "none",
     "php-docblocker.returnGap": true,
@@ -51,5 +51,16 @@
     "bracketPairColorizer.showHorizontalScopeLine": false,
     "bracketPairColorizer.showBracketsInRuler": false,
     "git.autofetch": true,
-    "diffEditor.renderSideBySide": false
+    "diffEditor.renderSideBySide": false,
+    "atlascode.jira.workingSite": {
+        "baseUrlSuffix": "atlassian.net"
+    },
+    "yaml.schemas": {
+        "file:///home/hotline-emu/.vscode/extensions/atlassian.atlascode-1.2.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "workbench.iconTheme": "ayu",
+    "material-icon-theme.showWelcomeMessage": false,
+    "files.associations": {
+        "*.bson": "json"
+    }
 }

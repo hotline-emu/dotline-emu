@@ -9,7 +9,8 @@
 	rh = reset --hard
 	rs = reset --soft HEAD~1
 	bd = branch -D
-	b = branch -v
+    b = branch -v
+    cb = checkout -b
 	rv = remote -v
 	ds = diff --stat --color
 	fa = fetch --all

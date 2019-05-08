@@ -44,7 +44,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(
-    git,
     aws
 )
 
