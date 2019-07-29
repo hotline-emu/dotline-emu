@@ -60,3 +60,4 @@ fpath=($fpath "/home/hotline-emu/.zfunctions")
 
 export NVM_DIR="/home/hotline-emu/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+source /usr/share/nvm/init-nvm.sh
