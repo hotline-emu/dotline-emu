@@ -17,7 +17,8 @@
 	c = checkout
 	rev = rebase -v
 	cm = commit -m
-	review = !sh -c 'git fetch $1 pull/$2/head:$3 && git checkout $3' -
+  review = !sh -c 'git fetch $1 pull/$2/head:$3 && git checkout $3' -
+  logs = log --stat
 [color]
 	ui = true
 [pager]
