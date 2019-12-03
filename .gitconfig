@@ -1,8 +1,8 @@
 [user]
-	name = hotline-emu
-	email = redacted@redacted
+	name = redacted
+	email = redacted
 [core]
-	excludesfile = /home/hotline-emu/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
 	editor = vim
 [alias]
 	st = status
@@ -19,6 +19,7 @@
 	cm = commit -m
   review = !sh -c 'git fetch $1 pull/$2/head:$3 && git checkout $3' -
   logs = log --stat
+  unstage = reset HEAD -- .
 [color]
 	ui = true
 [pager]
