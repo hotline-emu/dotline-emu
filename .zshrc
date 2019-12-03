@@ -15,6 +15,9 @@ zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 # SSH-Agent load these
 zstyle :omz:plugins:ssh-agent identities id_rsa james.galecki
 
+#Default terminal
+export EDITOR=/usr/bin/emacs
+
 #Source files
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -52,3 +55,4 @@ npm() {
 
 # Start tmux on launch
 if [ "$TMUX" = ""  ]; then tmux; fi
+
