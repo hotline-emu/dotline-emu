@@ -1,13 +1,16 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jquery": true
     },
-    "extends": [
-        "standard"
-    ],
     "plugins": [
-        "angular"
+        "angular",
+        "sonarjs"
+    ],
+    "extends": [
+        "standard",
+        "plugin:sonarjs/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -17,12 +20,31 @@
         "ecmaVersion": 11
     },
     "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "max-len": [
+            "error",
+            {
+                "code": 140
+            }
+        ],
         "no-multiple-empty-lines": [
             "error",
             {
                 "max": 1
             }
         ],
-        "camelcase": 0
+        "camelcase": 0,
+        "sonarjs/no-duplicate-string": 0,
+        "space-before-function-paren": 0,
+        "no-extra-semi": 0,
+        "semi": 0,
+        "comma-dangle": 0,
+        "quotes": 0,
+        "sonarjs/cognitive-complexity": 0,
+        "no-multi-spaces": 0,
+        "prefer-const": 0
     }
 }
