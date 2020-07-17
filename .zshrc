@@ -1,4 +1,4 @@
-export ZSH="/home/hotline-emu/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export TERM=xterm-256color
 
 ZSH_THEME="steeef"
@@ -13,7 +13,7 @@ plugins=(
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
 # SSH-Agent load these
-zstyle :omz:plugins:ssh-agent identities id_rsa james.galecki
+zstyle :omz:plugins:ssh-agent identities id_rsa firstname.lastname
 
 #Default terminal
 export EDITOR=/usr/bin/emacs
@@ -28,10 +28,10 @@ export PATH=$HOME/bin:$PATH
 export PATH=$NVM_BIN:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
-fpath=($fpath "/home/hotline-emu/.zfunctions")
+fpath=($fpath "$HOME/.zfunctions")
 
 # Lazy load NVM environment, will not invoke until first request of nvm, node, or npm
-export NVM_DIR="/home/hotline-emu/.nvm"
+export NVM_DIR="$HOME/.nvm"
 nvm() {
     unset -f nvm
     export NVM_DIR=~/.nvm
