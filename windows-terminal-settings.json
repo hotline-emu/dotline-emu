@@ -1,0 +1,66 @@
+{
+    "[yaml]": {
+        "editor.tabSize": 4
+    },
+    "bashBeautify.tabSize": 4,
+    "breadcrumbs.enabled": true,
+    "editor.colorDecorators": true,
+    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 12,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        120,
+        140
+    ],
+    "editor.scrollBeyondLastLine": true,
+    "editor.showUnused": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 141,
+    "editor.wrappingIndent": "indent",
+    "eslint.enable": true,
+    "eslint.packageManager": "npm",
+    "eslint.run": "onSave",
+    "eslint.runtime": "$NVM_BIN/eslint",
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": true,
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "files.hotExit": "off",
+    "files.insertFinalNewline": true,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "path-intellisense.showHiddenFiles": true,
+    "php.executablePath": "/usr/bin/php",
+    "php.suggest.basic": true,
+    "phpcs.enable": true,
+    "phpcs.standard": "PSR2",
+    "phpcs.autoConfigSearch": true,
+    "window.restoreWindows": "none",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "none",
+    "php-docblocker.returnGap": true,
+    "php-docblocker.gap": true,
+    "bracketPairColorizer.showBracketsInGutter":  true,
+    "bracketPairColorizer.showVerticalScopeLine": false,
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "bracketPairColorizer.showBracketsInRuler": false,
+    "git.autofetch": true,
+    "diffEditor.renderSideBySide": false,
+    "atlascode.jira.workingSite": {
+        "baseUrlSuffix": "atlassian.net"
+    },
+    "yaml.schemas": {
+        "file:///home/hotline-emu/.vscode/extensions/atlassian.atlascode-1.2.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "workbench.iconTheme": "ayu",
+    "material-icon-theme.showWelcomeMessage": false,
+    "files.associations": {
+        "*.bson": "json"
+    }
+}
