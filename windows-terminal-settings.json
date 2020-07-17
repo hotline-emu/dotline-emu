@@ -1,66 +1,144 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
 {
-    "[yaml]": {
-        "editor.tabSize": 4
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{da057fc1-aa8c-4d33-9d24-356909595dff}",
+  "profiles": {
+    "defaults": {
+      "colorScheme": "Dragon Ball Material",
+      "cursorShape": "underscore",
+      "fontFace": "Cascadia Code",
+      "fontSize": 10,
+      "historySize": 5000,
+      "useAcrylic": true,
+      "acrylicOpacity": 0.9,
+      "backgroundImageOpacity": 0.03,
+      "backgroundImage": "%USERPROFILE%\\Pictures\\kame.jpg",
+      "backgroundImageStretchMode": "uniform",
+      "background": "#E65100",
+      "backgroundImageAlignment": "topLeft",
+      "closeOnExit": "always",
+      "antialiasingMode": "cleartype",
+      "scrollbarState": "hidden",
+      "splitMode": "duplicate"
     },
-    "bashBeautify.tabSize": 4,
-    "breadcrumbs.enabled": true,
-    "editor.colorDecorators": true,
-    "editor.fontFamily": "Fira Code Retina",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 12,
-    "editor.minimap.enabled": false,
-    "editor.mouseWheelZoom": true,
-    "editor.renderWhitespace": "none",
-    "editor.rulers": [
-        120,
-        140
-    ],
-    "editor.scrollBeyondLastLine": true,
-    "editor.showUnused": true,
-    "editor.tabSize": 4,
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 141,
-    "editor.wrappingIndent": "indent",
-    "eslint.enable": true,
-    "eslint.packageManager": "npm",
-    "eslint.run": "onSave",
-    "eslint.runtime": "$NVM_BIN/eslint",
-    "extensions.autoCheckUpdates": true,
-    "extensions.autoUpdate": true,
-    "extensions.ignoreRecommendations": true,
-    "extensions.showRecommendationsOnlyOnDemand": true,
-    "files.hotExit": "off",
-    "files.insertFinalNewline": true,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "path-intellisense.showHiddenFiles": true,
-    "php.executablePath": "/usr/bin/php",
-    "php.suggest.basic": true,
-    "phpcs.enable": true,
-    "phpcs.standard": "PSR2",
-    "phpcs.autoConfigSearch": true,
-    "window.restoreWindows": "none",
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "workbench.settings.editor": "json",
-    "workbench.startupEditor": "none",
-    "php-docblocker.returnGap": true,
-    "php-docblocker.gap": true,
-    "bracketPairColorizer.showBracketsInGutter":  true,
-    "bracketPairColorizer.showVerticalScopeLine": false,
-    "bracketPairColorizer.showHorizontalScopeLine": false,
-    "bracketPairColorizer.showBracketsInRuler": false,
-    "git.autofetch": true,
-    "diffEditor.renderSideBySide": false,
-    "atlascode.jira.workingSite": {
-        "baseUrlSuffix": "atlassian.net"
+    "list": [
+      {
+        "guid": "{da057fc1-aa8c-4d33-9d24-356909595dff}",
+        "name": "bash",
+        "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "hidden": false,
+        "startingDirectory": "~",
+        "icon": "%USERPROFILE%%\\Pictures\\bash.png"
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name": "cmd",
+        "commandline": "cmd.exe",
+        "hidden": false
+      },
+      {
+        "guid": "{f6c2e4a2-ef45-4a6e-9023-e92133b2a5ee}",
+        "name": "Windows PowerShell",
+        "commandline": "powershell.exe",
+        "hidden": false
+      },
+      {
+        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "hidden": false,
+        "name": "Azure Cloud Shell",
+        "source": "Windows.Terminal.Azure"
+      }
+    ]
+  },
+  // Add custom color schemes to this array
+  "schemes": [
+    {
+      "name": "Monokai Seti Dark",
+      "foreground": "#F8F8F2",
+      "background": "#151718",
+      "black": "#151718",
+      "brightBlack": "#625e4c",
+      "blue": "#9D65FF",
+      "brightBlue": "#9D65FF",
+      "cyan": "#58D1EB",
+      "brightCyan": "#58D1EB",
+      "green": "#98F424",
+      "brightGreen": "#98F424",
+      "purple": "#F4005F",
+      "brightPurple": "#F4005F",
+      "red": "#F4005F",
+      "brightRed": "#F4005F",
+      "white": "#F8F8F2",
+      "brightWhite": "#f6f6ef",
+      "yellow": "#FA8419",
+      "brightYellow": "#FA8419"
     },
-    "yaml.schemas": {
-        "file:///home/hotline-emu/.vscode/extensions/atlassian.atlascode-1.2.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    {
+      "name": "His Hot Materials",
+      "foreground": "#A1B0B8",
+      "background": "#151515",
+      "black": "#252525",
+      "brightBlack": "#757575",
+      "blue": "#00B0FF",
+      "brightBlue": "#80D8FF",
+      "cyan": "#00B8D4",
+      "brightCyan": "#18FFFF",
+      "green": "#64DD17",
+      "brightGreen": "#76FF03",
+      "purple": "#C51162",
+      "brightPurple": "#FF80AB",
+      "red": "#D50000",
+      "brightRed": "#FF1744",
+      "white": "#F5F5F5",
+      "brightWhite": "#f6f6ef",
+      "yellow": "#FFD600",
+      "brightYellow": "#FFFF00"
     },
-    "workbench.iconTheme": "ayu",
-    "material-icon-theme.showWelcomeMessage": false,
-    "files.associations": {
-        "*.bson": "json"
+    {
+      "name": "Dragon Ball Material",
+      "foreground": "#FFD180",
+      "background": "#151515",
+      "black": "#424242",
+      "brightBlack": "#757575",
+      "blue": "#01579B",
+      "brightBlue": "#00B0FF",
+      "cyan": "#00E5FF",
+      "brightCyan": "#18FFFF",
+      "green": "#1DE9B6",
+      "brightGreen": "#64FFDA",
+      "purple": "#7B1FA2",
+      "brightPurple": "#AA00FF",
+      "red": "#B71C1C",
+      "brightRed": "#FF1744",
+      "white": "#ECEFF1",
+      "brightWhite": "#f6f6ef",
+      "yellow": "#FFCA28",
+      "brightYellow": "#FFD740"
     }
+  ],
+  // Add any keybinding overrides to this array.
+  // To unbind a default keybinding, set the command to "unbound"
+  "keybindings": [
+    {
+      "keys": [
+        "ctrl+shift+'"
+      ],
+      "command": {
+        "action": "splitPane",
+        "split": "horizontal",
+        "splitMode": "duplicate"
+      }
+    },
+    {
+      "keys": [
+        "ctrl+shift+5"
+      ],
+      "command": {
+        "action": "splitPane",
+        "split": "vertical",
+        "splitMode": "duplicate"
+      }
+    }
+  ]
 }
